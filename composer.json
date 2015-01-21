@@ -32,6 +32,34 @@
   "repositories": [
     {
       "type": "git",
+      "url": "git@github.com:istt/yii2-module-template.git"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:istt/yii2-sms-module.git"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:istt/yii2-np-module.git"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:istt/yii2-project-module.git"
+    },
+    {
+      "type": "git",
+      "url": "git@trungnguyen_syniverse.bitbucket.org:trung_nguyen_syniverse/yii2-gtm-module.git"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:istt/yii2-bizgod-module.git"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:istt/yii2-ticket-module.git"
+    },
+    {
+      "type": "git",
       "url": "https://github.com/schmunk42/yii2-markdocs-module.git"
     }
   ],
@@ -49,7 +77,19 @@
     "dmstr/yii2-adminlte-asset": "*",
     "dmstr/yii2-log": "dev-master",
     "schmunk42/yii2-packaii": "dev-master",
-    "schmunk42/yii2-markdocs-module": "dev-master"
+    "schmunk42/yii2-markdocs-module": "dev-master",
+    "kartik-v/yii2-widgets": "*",
+    "kartik-v/yii2-grid": "*",
+    "creocoder/yii2-nested-sets": "*",
+    "pheme/yii2-settings": "*",
+    "dektrium/yii2-user": "*",
+    "istt/yii2-template-module": "*",
+    "istt/yii2-sms-module": "*",
+    "istt/yii2-ticket-module": "*",
+    "istt/yii2-project-module": "*",
+    "istt/yii2-bizgod-module": "*",
+    "syniverse/yii2-gtm-module": "*",
+    "istt/yii2-np-module": "*"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "2.*",
