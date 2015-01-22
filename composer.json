@@ -28,7 +28,7 @@
     "issues": "https://github.com/phundament/app/issues?state=open",
     "source": "https://github.com/phundament/app"
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "repositories": [
     {
       "type": "git",
@@ -70,7 +70,7 @@
     "yiisoft/yii2": "2.0.*",
     "yiisoft/yii2-bootstrap": "2.*",
     "yiisoft/yii2-swiftmailer": "2.*",
-    "dektrium/yii2-user": "0.9.*",
+    "dektrium/yii2-user": "*",
     "mikehaertl/php-shellcommand": "1.*",
     "dmstr/yii2-app-command": "dev-master",
     "dmstr/yii2-migrate-command": "*",
@@ -80,16 +80,12 @@
     "schmunk42/yii2-markdocs-module": "dev-master",
     "kartik-v/yii2-widgets": "*",
     "kartik-v/yii2-grid": "*",
-    "creocoder/yii2-nested-sets": "*",
     "pheme/yii2-settings": "*",
-    "dektrium/yii2-user": "*",
-    "istt/yii2-template-module": "*",
-    "istt/yii2-sms-module": "*",
-    "istt/yii2-ticket-module": "*",
-    "istt/yii2-project-module": "*",
-    "istt/yii2-bizgod-module": "*",
-    "syniverse/yii2-gtm-module": "*",
-    "istt/yii2-np-module": "*"
+    "istt/yii2-np-module": "dev-master",
+    "istt/yii2-sms-module": "dev-master",
+    "istt/yii2-bizgod-module": "dev-master",
+    "istt/yii2-project-module": "dev-master",
+    "syniverse/yii2-gtm-module": "dev-master"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "2.*",
