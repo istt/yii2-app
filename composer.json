@@ -85,7 +85,8 @@
     "istt/yii2-sms-module": "dev-master",
     "istt/yii2-bizgod-module": "dev-master",
     "istt/yii2-project-module": "dev-master",
-    "syniverse/yii2-gtm-module": "dev-master"
+    "syniverse/yii2-gtm-module": "dev-master",
+    "mdmsoft/yii2-admin": "~1.0@dev"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "2.*",

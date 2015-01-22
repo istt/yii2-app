@@ -34,14 +34,26 @@ class Module extends \yii\base\Module
                 case 'user':
                 case 'packaii':
                 case 'gii':
-                    $menuItems[] = $menuItemPresets[$name];
+                    $menuItems[$name] = $menuItemPresets[$name];
                     break;
                 default:
                     $module          = \Yii::$app->getModule($name);
-                    $autoMenuItems[] = [
+                    // Automatically add menu items in case of `_menu[ModuleID].php` exists in module or app path...
+                    $items = [];
+                    if ($module && (file_exists($phpFile = $module->getViewPath() . '/layouts/_menu' . ucfirst($name) . '.php'))) {
+                    	$items = array_merge_recursive($items, require($phpFile));
+                    } elseif ($module && (file_exists($phpFile = \Yii::$app->getViewPath() . '/layouts/_menu' . ucfirst($name) . '.php'))){
+                    	$items = array_merge_recursive($items, require($phpFile));
+                    }
+
+                    $autoMenuItems[$name] = [
                         'label' => '<i class="fa fa-cube"></i> <span>' . ucfirst($name) . '</span>',
                         'url'   => ['/' . $module->id]
                     ];
+                    if (count($items)){
+                    	$autoMenuItems[$name]['url'] = '#';
+                    	$autoMenuItems[$name]['items'] = $items;
+                    }
             }
         }
 

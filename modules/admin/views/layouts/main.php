@@ -86,7 +86,7 @@ $this->title = $this->title.' [Backend] '.Yii::$app->params['appName'];
                                 <?php #var_dump(\Yii::$app->user->identity); ?>
                                 <?php echo \cebe\gravatar\Gravatar::widget(
                                     [
-                                        'email'   => 'xxx@example.com',#\Yii::$app->user->identity->profile->gravatar_email,
+                                        'email'   => \Yii::$app->user->identity->profile->gravatar_email,
                                         'options' => [
                                             'alt' => \Yii::$app->user->identity->username
                                         ],
