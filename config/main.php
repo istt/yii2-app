@@ -177,4 +177,9 @@ if (file_exists(__DIR__ . '/local.php')) {
     $config = \yii\helpers\ArrayHelper::merge($config, $local);
 }
 
+if (file_exists(__DIR__ . '/local-dev.php')) {
+	// Local configuration, if available
+	$local  = require(__DIR__ . '/local-dev.php');
+	$config = \yii\helpers\ArrayHelper::merge($config, $local);
+}
 return $config;
