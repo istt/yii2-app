@@ -1,4 +1,6 @@
 <?php
+use kartik\grid\GridView;
+
 \Yii::$container->set ( 'kartik\widgets\DatePicker', [
 		'pluginOptions' => [
 				'format' => 'yyyy-mm-dd',
@@ -17,7 +19,15 @@
 				'todayHighlight' => true
 		]
 ] );
-return [
+\Yii::$container->set ( 'kartik\widgets\Grid', [
+		'exportConfig' => [
+				'csv',
+				'excel'
+		],
+		'responsive' => true,
+		'hover' => true
+] );
+$localConfig = [
 		'language' => 'vi',
 		'components' => [
 				'authManager' => 'yii\rbac\DbManager',
@@ -29,25 +39,20 @@ return [
 										'basePath' => '@app/messages'
 								]
 						]
+				],
+				'urlManager' => [
+						'enablePrettyUrl' => true,
 				]
 		],
 		'modules' => [
 				'settings' => [
 						'class' => 'pheme\settings\Module',
-						'layout'       => '@admin-views/layouts/main',
+						'layout' => '@admin-views/layouts/main'
 				],
-				'auth' => [
-						'class' => 'mdm\admin\Module',
-						'layout'       => '@admin-views/layouts/main',
-				],
-				'user' => [
-						'admins' => ['nguyendinhtrung141'],
-						'controllerMap' => [
-								'admin' => 'app\controllers\user\AdminController'
-						],
-				],
-		]
-		,
+				'gridview' => [
+						'class' => '\kartik\grid\Module'
+				]
+		],
 		'params' => [
 				'yii.migrations' => [
 						'@yii/rbac/migrations',
@@ -56,3 +61,20 @@ return [
 				]
 		]
 ];
+
+if (php_sapi_name () != 'cli') {
+	$localConfig ['modules'] ['auth'] = [
+			'class' => 'mdm\admin\Module',
+			'layout' => '@admin-views/layouts/main'
+	];
+	$localConfig ['modules'] ['user'] = [
+			'class' => 'dektrium\user\Module',
+			'admins' => [
+					'nguyendinhtrung141'
+			],
+			'controllerMap' => [
+					'admin' => 'app\controllers\user\AdminController'
+			]
+	];
+}
+return $localConfig;

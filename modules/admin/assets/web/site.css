@@ -89,3 +89,13 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+/** Admin LTE support **/
+.skin-black .sidebar .dropdown.open a {
+  color: #444;
+}
+.skin-black .sidebar .dropdown.open li.active a,
+.skin-black .sidebar .dropdown.open li a:hover  {
+  color: #eee;
+}
+
